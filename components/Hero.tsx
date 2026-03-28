@@ -1,0 +1,94 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+export function Hero() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
+  return (
+    <section className="min-h-screen flex items-center justify-center px-6 sm:px-12 py-20">
+      <motion.div
+        className="w-full max-w-3xl"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Status Badge */}
+        <motion.div
+          variants={itemVariants}
+          className="mb-12 flex items-center gap-2"
+        >
+          <div className="relative w-2 h-2">
+            <div className="absolute inset-0 bg-emerald-500 rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 bg-emerald-500 rounded-full"></div>
+          </div>
+          <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            Available for projects
+          </span>
+        </motion.div>
+
+        {/* Main Headline */}
+        <motion.h1
+          variants={itemVariants}
+          className="text-6xl sm:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 leading-none"
+        >
+          Affan Ilham
+        </motion.h1>
+
+        {/* Sub-headline */}
+        <motion.p
+          variants={itemVariants}
+          className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 leading-relaxed mb-8 max-w-2xl"
+        >
+          Converting raw data into actionable insights
+        </motion.p>
+
+        {/* Description */}
+        <motion.p
+          variants={itemVariants}
+          className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed mb-12 max-w-2xl font-light"
+        >
+          Data enthusiast with expertise in analytics, machine learning, and business intelligence. 
+          I specialize in building data solutions that drive measurable impact and inform strategic decisions.
+        </motion.p>
+
+        {/* CTA */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-4"
+        >
+          <a
+            href="#projects"
+            className="px-8 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium inline-flex items-center justify-center border-2 border-zinc-900 dark:border-white hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
+          >
+            View My Work
+          </a>
+          <a
+            href="#contact"
+            className="px-8 py-3 border-2 border-zinc-900 dark:border-zinc-300 text-zinc-900 dark:text-zinc-300 font-medium inline-flex items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+          >
+            Get in Touch
+          </a>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
