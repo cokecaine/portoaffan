@@ -61,3 +61,9 @@ export const socialLinks: SocialLink[] = [
     url: "mailto:affan@example.com",
   },
 ];
+
+export const education = {
+  school: "Universitas Muhammadiyah Surakarta",
+  location: "Surakarta, Indonesia",
+  focus: "Data Science & Information Technology",
+};

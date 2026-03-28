@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { education } from "@/data/portfolio";
 
 export function Hero() {
   const containerVariants = {
@@ -48,10 +49,20 @@ export function Hero() {
         {/* Main Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-6xl sm:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 leading-none"
+          className="text-6xl sm:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2 leading-none"
         >
-          Affan Ilham
+          Affan Ilham Arsyilla
         </motion.h1>
+
+        {/* Education Badge */}
+        <motion.div
+          variants={itemVariants}
+          className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+        >
+          <span className="text-sm font-mono text-zinc-600 dark:text-zinc-400">
+            {education.school}
+          </span>
+        </motion.div>
 
         {/* Sub-headline */}
         <motion.p
