@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export function Hero() {
   const containerVariants = {
@@ -19,7 +19,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -66,8 +66,9 @@ export function Hero() {
           variants={itemVariants}
           className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed mb-12 max-w-2xl font-light"
         >
-          Data enthusiast with expertise in analytics, machine learning, and business intelligence. 
-          I specialize in building data solutions that drive measurable impact and inform strategic decisions.
+          Data enthusiast with expertise in analytics, machine learning, and
+          business intelligence. I specialize in building data solutions that
+          drive measurable impact and inform strategic decisions.
         </motion.p>
 
         {/* CTA */}

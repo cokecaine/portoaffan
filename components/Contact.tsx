@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { socialLinks } from '@/data/portfolio';
+import { motion } from "framer-motion";
+import { socialLinks } from "@/data/portfolio";
 
 export function Contact() {
   const containerVariants = {
@@ -20,7 +20,7 @@ export function Contact() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -31,7 +31,7 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
@@ -48,7 +48,7 @@ export function Contact() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           className="flex flex-col gap-6"
         >
           {socialLinks.map((link) => (
@@ -56,8 +56,10 @@ export function Contact() {
               key={link.platform}
               variants={itemVariants}
               href={link.url}
-              target={link.platform !== 'email' ? '_blank' : undefined}
-              rel={link.platform !== 'email' ? 'noopener noreferrer' : undefined}
+              target={link.platform !== "email" ? "_blank" : undefined}
+              rel={
+                link.platform !== "email" ? "noopener noreferrer" : undefined
+              }
               className="group inline-flex items-baseline gap-3 py-2 text-lg font-medium text-zinc-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
               <span className="relative">

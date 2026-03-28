@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { skills } from '@/data/portfolio';
+import { motion } from "framer-motion";
+import { skills } from "@/data/portfolio";
 
 export function Skills() {
   const containerVariants = {
@@ -20,15 +20,15 @@ export function Skills() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.4, ease: 'easeOut' },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   };
 
   // Group skills by category
   const groupedSkills = {
-    language: skills.filter((s) => s.category === 'language'),
-    tool: skills.filter((s) => s.category === 'tool'),
-    library: skills.filter((s) => s.category === 'library'),
+    language: skills.filter((s) => s.category === "language"),
+    tool: skills.filter((s) => s.category === "tool"),
+    library: skills.filter((s) => s.category === "library"),
   };
 
   return (
@@ -38,7 +38,7 @@ export function Skills() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
@@ -66,7 +66,7 @@ export function Skills() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-wrap gap-3"
             >
               {groupedSkills.language.map((skill) => (
@@ -95,7 +95,7 @@ export function Skills() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-wrap gap-3"
             >
               {groupedSkills.tool.map((skill) => (
@@ -124,7 +124,7 @@ export function Skills() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-wrap gap-3"
             >
               {groupedSkills.library.map((skill) => (

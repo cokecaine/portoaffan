@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,11 +14,10 @@ export function Footer() {
         transition={{ duration: 0.6 }}
         className="w-full max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-zinc-600 dark:text-zinc-400"
       >
+        <p>© {currentYear} Affan Ilham. All rights reserved.</p>
         <p>
-          © {currentYear} Affan Ilham. All rights reserved.
-        </p>
-        <p>
-          Built with <span className="font-semibold">Next.js</span> & <span className="font-semibold">TypeScript</span>
+          Built with <span className="font-semibold">Next.js</span> &{" "}
+          <span className="font-semibold">TypeScript</span>
         </p>
       </motion.div>
     </footer>

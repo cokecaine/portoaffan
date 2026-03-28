@@ -14,14 +14,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Affan Ilham - Data Enthusiast & Analytics Professional",
-  description: "Portfolio of Affan Ilham, a data enthusiast specializing in analytics, machine learning, and business intelligence. Converting raw data into actionable insights.",
-  keywords: ["data analyst", "machine learning", "analytics", "Python", "SQL", "Tableau"],
+  description:
+    "Portfolio of Affan Ilham, a data enthusiast specializing in analytics, machine learning, and business intelligence. Converting raw data into actionable insights.",
+  keywords: [
+    "data analyst",
+    "machine learning",
+    "analytics",
+    "Python",
+    "SQL",
+    "Tableau",
+  ],
   authors: [{ name: "Affan Ilham" }],
   openGraph: {
     type: "website",
     url: "https://affan-ilham.com",
     title: "Affan Ilham - Data Enthusiast & Analytics Professional",
-    description: "Portfolio of Affan Ilham, a data enthusiast specializing in analytics, machine learning, and business intelligence.",
+    description:
+      "Portfolio of Affan Ilham, a data enthusiast specializing in analytics, machine learning, and business intelligence.",
   },
 };
 
@@ -36,7 +45,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col text-zinc-900 dark:text-white bg-white dark:bg-black">{children}</body>
+      <body className="min-h-full flex flex-col text-zinc-900 dark:text-white bg-white dark:bg-black">
+        {children}
+      </body>
     </html>
   );
 }
