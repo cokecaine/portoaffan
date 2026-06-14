@@ -9,7 +9,7 @@ export function Skills() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
+        staggerChildren: 0.07,
         delayChildren: 0.1,
       },
     },
@@ -20,19 +20,24 @@ export function Skills() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.4 },
+      transition: { duration: 0.35 },
     },
   };
 
-  // Group skills by category
   const groupedSkills = {
     language: skills.filter((s) => s.category === "language"),
     tool: skills.filter((s) => s.category === "tool"),
     library: skills.filter((s) => s.category === "library"),
   };
 
+  const sections: { label: string; key: keyof typeof groupedSkills }[] = [
+    { label: "Languages", key: "language" },
+    { label: "Tools & Platforms", key: "tool" },
+    { label: "Libraries & Frameworks", key: "library" },
+  ];
+
   return (
-    <section className="py-20 px-6 sm:px-12">
+    <section id="skills" className="py-20 px-6 sm:px-12">
       <div className="w-full max-w-3xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -52,92 +57,35 @@ export function Skills() {
 
         {/* Skills by Category */}
         <div className="space-y-12">
-          {/* Languages */}
-          <div>
-            <motion.h3
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-sm font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-4"
-            >
-              Languages
-            </motion.h3>
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              className="flex flex-wrap gap-3"
-            >
-              {groupedSkills.language.map((skill) => (
-                <motion.span
-                  key={skill.name}
-                  variants={itemVariants}
-                  className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 font-mono text-sm font-medium hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors"
-                >
-                  {skill.name}
-                </motion.span>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Tools */}
-          <div>
-            <motion.h3
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-sm font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-4"
-            >
-              Tools & Platforms
-            </motion.h3>
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              className="flex flex-wrap gap-3"
-            >
-              {groupedSkills.tool.map((skill) => (
-                <motion.span
-                  key={skill.name}
-                  variants={itemVariants}
-                  className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 font-mono text-sm font-medium hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors"
-                >
-                  {skill.name}
-                </motion.span>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Libraries */}
-          <div>
-            <motion.h3
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-sm font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-4"
-            >
-              Libraries & Frameworks
-            </motion.h3>
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              className="flex flex-wrap gap-3"
-            >
-              {groupedSkills.library.map((skill) => (
-                <motion.span
-                  key={skill.name}
-                  variants={itemVariants}
-                  className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 font-mono text-sm font-medium hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors"
-                >
-                  {skill.name}
-                </motion.span>
-              ))}
-            </motion.div>
-          </div>
+          {sections.map(({ label, key }) => (
+            <div key={key}>
+              <motion.h3
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-sm font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-4"
+              >
+                {label}
+              </motion.h3>
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="flex flex-wrap gap-3"
+              >
+                {groupedSkills[key].map((skill) => (
+                  <motion.span
+                    key={skill.name}
+                    variants={itemVariants}
+                    className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 font-mono text-sm font-medium hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors cursor-default"
+                  >
+                    {skill.name}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

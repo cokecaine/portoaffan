@@ -14,11 +14,7 @@ export function Footer() {
         transition={{ duration: 0.6 }}
         className="w-full max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-zinc-600 dark:text-zinc-400"
       >
-        <p>© {currentYear} Affan Ilham. All rights reserved.</p>
-        <p>
-          Built with <span className="font-semibold">Next.js</span> &{" "}
-          <span className="font-semibold">TypeScript</span>
-        </p>
+        <p>© {currentYear} cokecaine. All rights reserved.</p>
       </motion.div>
     </footer>
   );

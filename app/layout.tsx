@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,8 +86,8 @@ export default function RootLayout({
       location: "Surakarta, Indonesia",
     },
     sameAs: [
-      "https://linkedin.com/in/affan-ilham",
-      "https://github.com/affanilham",
+      "https://www.linkedin.com/in/affanilhamarsyila",
+      "https://github.com/cokecaine",
     ],
   };
 
@@ -103,6 +104,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col text-zinc-900 dark:text-white bg-white dark:bg-black">
+        <Header />
         {children}
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { education } from "@/data/portfolio";
 
 export function Hero() {
@@ -69,7 +70,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 leading-relaxed mb-8 max-w-2xl"
         >
-          Converting raw data into actionable insights
+          Full-stack developer with a focus on mobile, web, and AI engineering
         </motion.p>
 
         {/* Description */}
@@ -77,9 +78,10 @@ export function Hero() {
           variants={itemVariants}
           className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed mb-12 max-w-2xl font-light"
         >
-          Data enthusiast with expertise in analytics, machine learning, and
-          business intelligence. I specialize in building data solutions that
-          drive measurable impact and inform strategic decisions.
+          A student of Informatics at Universitas Muhammadiyah Surakarta with a
+          passion for data science and technology. I build data-driven solutions
+          — from machine learning models to interactive dashboards — that turn
+          complex information into clear, actionable insights.
         </motion.p>
 
         {/* CTA */}
@@ -87,18 +89,18 @@ export function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <a
-            href="#projects"
+          <Link
+            href="/projects"
             className="px-8 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium inline-flex items-center justify-center border-2 border-zinc-900 dark:border-white hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
           >
             View My Work
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/contact"
             className="px-8 py-3 border-2 border-zinc-900 dark:border-zinc-300 text-zinc-900 dark:text-zinc-300 font-medium inline-flex items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
           >
             Get in Touch
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>
