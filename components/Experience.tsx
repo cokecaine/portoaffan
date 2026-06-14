@@ -20,7 +20,7 @@ export function Experience() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
     },
   };
 
@@ -48,6 +48,7 @@ export function Experience() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
+          animate="visible"
           viewport={{ once: true, margin: "-100px" }}
           className="space-y-10"
         >
