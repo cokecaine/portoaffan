@@ -92,6 +92,20 @@ export function Projects() {
                 {project.event ? ` · ${project.event}` : ""} · {project.date}
               </p>
 
+              {/* Link */}
+              {project.link && (
+                <p className="text-sm text-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    View Project
+                  </a>
+                </p>
+              )}
+
               {/* Description */}
               <p className="text-base text-zinc-600 dark:text-zinc-300 mb-5 leading-relaxed">
                 {project.description}

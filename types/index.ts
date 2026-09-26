@@ -8,6 +8,7 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
+  link?: string;
   role: string;
   event?: string;
   date: string;
